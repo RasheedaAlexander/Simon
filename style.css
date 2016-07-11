@@ -1,0 +1,62 @@
+body {
+  background: url("eevee.jpg");
+  background-size: cover;
+}
+.simon {
+  background-color: rgba(0, 0, 0, 0.8);;
+  width: 500px;
+  height: 500px;
+  border: 2px solid #000000;
+  border-radius: 250px;
+  margin: 0 auto;
+  position:relative;
+}
+ul {
+  list-style-type: none;
+}
+.button {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin: 42px auto;
+}
+#red {
+  top: 0px;
+  left: 40px;
+  background-color: red;
+  border-radius: 100% 0 2% 0;
+}
+#blue {
+  top: 0;
+  right: 40px;
+  background-color: blue;
+  border-radius: 0 100% 0 2%;
+}
+#yellow {
+  bottom: 0;
+  right: 40px;
+  background-color: yellow;
+  border-radius: 2% 0 100% 0;
+}
+#green {
+  bottom: 0;
+  left: 40px;
+  background-color: green;
+  border-radius: 0 2% 0 100%;
+}
+.center {
+  position: absolute;
+  background-color: red;
+  border: 20px solid grey;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  top: 170px;
+  left: 540px;
+  border-radius: 50%;
+  text-align: center;
+}
+p {
+  margin-top: 60px;
+  color: black;
+}
