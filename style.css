@@ -3,12 +3,12 @@ body {
   background-size: cover;
 }
 .simon {
-  background-color: rgba(0, 0, 0, 0.8);;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 500px;
   height: 500px;
   border: 2px solid #000000;
   border-radius: 250px;
-  margin: 0 auto;
+  margin: 100px auto;
   position:relative;
 }
 ul {
@@ -45,18 +45,19 @@ ul {
   border-radius: 0 2% 0 100%;
 }
 .center {
-  position: absolute;
-  background-color: red;
-  border: 20px solid grey;
-  margin: 0 auto;
-  width: 150px;
-  height: 150px;
-  top: 170px;
-  left: 540px;
-  border-radius: 50%;
-  text-align: center;
+    position: absolute;
+    background-color: red;
+    border: 25px solid rgba(0, 0, 0, 0.8);
+    margin: 100px auto;
+    width: 150px;
+    height: 150px;
+    top: 150px;
+    left: 540px;
+    border-radius: 50%;
+    text-align: center;
 }
 p {
   margin-top: 60px;
   color: black;
+  font-family: 'Sigmar One', cursive;
 }
