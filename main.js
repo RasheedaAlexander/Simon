@@ -12,7 +12,7 @@ $(document).ready(function() {
   //When start button is pushed
   //start the counter
   //change the start button to green
-  start.on("click", function() {
+  start.on("click", function(){
     //console.log("start button clicked");
     //Check Background color
     //console.log( $(this).css("background-color") );
@@ -31,14 +31,18 @@ $(document).ready(function() {
     }
   });
 
-  //create an array (sequence) to assign the colors to numbers
-  /*function powerUp() {
+  function newRound(){
+    //when a new round starts is add 1 to the 'round' variable, which is keeping track of which round we are on
+    //use .text() to set this round
+    $('data-round').text(++this.round);
+    //let the computer randomly pick one of the tiles
+    //send it to the sequence array to compare it to the color the user clicks
+    sequence.push(randomNumber());
+    //Keep track of the most recent input made by the computer
+    copy = sequence.slice(0);
+  }
 
-  //send array to the animate function
-  animate(sequence);
-}
-
-
+/*
 //start animation (simulate lighting by changing background opacity)
 function animate(sequence){
   //keep calling this animation until finished sorting through the array
@@ -72,4 +76,5 @@ function darkButton(sequence) {
 //else, restart counter & change start button to red
 
 //If user hits start button while it's green, stop it and turn it red
+*/
 });
