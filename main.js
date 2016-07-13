@@ -35,7 +35,7 @@ $(document).ready(function() {
     //when a new round starts is add 1 to the 'round' variable, which is keeping track of which round we are on
     //use .text() to set this round
     $('data-round').text(++this.round);
-    //let the computer randomly pick one of the tiles
+    //let the computer randomly pick one of the colors
     //send it to the sequence array to compare it to the color the user clicks
     sequence.push(randomNumber());
     //Keep track of the most recent input made by the computer
@@ -59,6 +59,30 @@ $(document).ready(function() {
     //else, set to false
     correct = (desiredResponse === actualResponse);
   }
+  function checkLose(){
+    // Whenever a player clicks on a color, there are three possible outcomes
+// 1.) User clicked the right color, but is yet to complete the pattern
+// 2.) User clicked the right color, and it was also the last color in the pattern
+// 3.) User clicked on the wrong color, and the game ends
+// This 'if statment' will only run if the user has completed the pattern correctly
+  // First condition: check to see how many moves are left in the pattern
+    //If there are 0 moves left, move on to the next condition
+  // Second condition: check to see if the color the user clicked on was the correct color
+    //If it was, the function will run!
+    if (copy.length === 0 && correct) {
+      //disable game board once the round is over
+      deactivateSimonBoart();
+      //call newRound function(tells computer to add another move to the memory & display pattern to user)
+      newRound();
+    }
+      else if(correct == false){
+        deactivateSimonBoart();
+        //end game function
+        endGame();
+    }
+  }
+
+  
 
   /*
   //start animation (simulate lighting by changing background opacity)
