@@ -39,35 +39,53 @@ $(document).ready(function() {
     //send it to the sequence array to compare it to the color the user clicks
     sequence.push(randomNumber());
     //Keep track of the most recent input made by the computer
+    //.slice() extracts a section of sequence and returns a new array
     copy = sequence.slice(0);
   }
 
-/*
-//start animation (simulate lighting by changing background opacity)
-function animate(sequence){
+  //Compare most recent input by computer to the color the user clicks
+  //Run this function when a user clicks a color
+  function registerClick(evt) {
+    //check whether or not the user clicked the right color
+    //desiredResponse(same as computer)
+    //actualResponse(users response)
+    //remove 1st item of sequence w/ .shift()
+    var desiredResponse = copy.shift();
+    //get the evt element that triggered the response & attach color data to it
+    var actualResponse = $(evt.target).data('color');
+
+    //compare the color clicked to the most recent move made by computer
+    //if input was correct, set to tru
+    //else, set to false
+    correct = (desiredResponse === actualResponse);
+  }
+
+  /*
+  //start animation (simulate lighting by changing background opacity)
+  function animate(sequence){
   //keep calling this animation until finished sorting through the array
   //regulate the timing of when the items light up one at a time
   var interval = setInterval(function () {
 
-    //increment to track the progress over the array sequence
-    //start the lightButton function while the current color is in sequence
-    for(var i=0; i<=sequence.length; i++) {
-      darkButton(sequence[i]);
+  //increment to track the progress over the array sequence
+  //start the lightButton function while the current color is in sequence
+  for(var i=0; i<=sequence.length; i++) {
+  darkButton(sequence[i]);
 
-      if(sequence.length>=i){
-        console.log(sequence[i]);
-        clearInterval(interval);
-      }
-    }
-  }, 600);
+  if(sequence.length>=i){
+  console.log(sequence[i]);
+  clearInterval(interval);
+}
+}
+}, 600);
 }
 
 
 function darkButton(sequence) {
-  animate(sequence);
-  button.animate({opacity: 0.7}, 300);
-  button.animate({opacity: 1}, 300);
-  //setTimeout needed
+animate(sequence);
+button.animate({opacity: 0.7}, 300);
+button.animate({opacity: 1}, 300);
+//setTimeout needed
 
 }
 */
