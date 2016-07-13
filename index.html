@@ -9,16 +9,23 @@
 <body>
   <div class="simon">
     <ul>
-      <li id="red" class="button"></li>
-      <li id="blue" class="button"></li>
-      <li id="yellow" class="button"></li>
-      <li id="green" class="button"></li>
+      <li class="button red" data-tile="1"></li>
+      <li class="button blue" data-tile="2"></li>
+      <li  class="button yellow" data-tile="3"></li>
+      <li class="button green" data-tile="4"></li>
     </ul>
   </div>
   <div id="start">
     <p>Start</p>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="main.js"></script>
+
+  <div id="yo" style="display: none;">
+    <h2>Round: <span data-round="0">0</span></h2>
+    <button data-action="start" class="btn btn-default" style="background-:white;">New Game</button>
+  </div>
+  <p data-action="lose">Sorry, you lost after <span data-round="0"></span> rounds!</p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
