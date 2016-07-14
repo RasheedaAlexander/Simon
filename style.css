@@ -47,11 +47,14 @@ ul {
   background-color: green;
   border-radius: 0 2% 0 100%;
 }
+.lit {
+  opacity: 0.7;
+}
 p {
   margin-top: 60px;
   color: black;
 }
-#start {
+.start {
   position: absolute;
   background-color: red;
   border: 20px solid rgba(0, 0, 0, 0.8);
