@@ -30,6 +30,9 @@ $(document).ready(function() {
   }
 
   function testNewStart() {
+    do{
+    }
+    while();
     sequence = [];
     sequence.push(randomNumber());
     processPlayList(sequence);
