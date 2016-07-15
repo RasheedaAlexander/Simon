@@ -7,44 +7,49 @@ $(document).ready(function() {
   var userClicks = [];
   //Keep track of how many rounds have been played
   var round = $('.round');
+  //Keep track of whose turn it is
+  var userTurn = false;
 
+  $(start).on("click", function(clickEvent){
+    testNewStart();
+  })
+  $('.button').on("click", function(clickEvent){
+    lightUp($(this).attr('data-tile'));
+  })
 
-
-  $(start).on("click", testNewStart);
   function newRound(){
     userClicks = [];
     round=0;
-    console.log(this + "is start");
+    console.log("is start");
 
     //when a new round starts is add 1 to the 'round' variable, which is keeping track of which round we are on
     //use .text() to set this round
-    $('data-round').text(++this.round);
+    $('data-round').text(round++);
     //let the computer randomly pick one of the tiles
     //send it to the sequence array to compare it to the tile the user clicks
 
     //Keep track of the most recent input made by the computer
     //.slice() extracts a section of sequence and returns a new array
-    userClicks = randomNumber();
+    userClicks.push(randomNumber());
     console.log("Pushing a random number into the array: " + sequence);
     testNewStart();
   }
 
   function testNewStart() {
-    do{
-    }
-    while();
+    var thisButton = $('.start');
     sequence = [];
     sequence.push(randomNumber());
     processPlayList(sequence);
-
-    if ($(this).css(("background-color") == "rgb(255, 0, 0)")){
-      console.log("start button clicked");
+    //instead of directly plugging CSS into the if statement, I stored the color in question in a variable. The if statement works now.
+    var thisColor = $(thisButton).css('background-color');
+    if (thisColor == 'rgb(255, 0, 0)'){
       //reset the moves from the computer, the moves from the player, and the round to 0
       //Change the start button to green when clicked
-      $(this).css("background-color", "green").html("<p>Stop</p>");
+      $(thisButton).css("background-color", "green").html("<p>Stop</p>");
       console.log("Start");
+      newRound();
     } else {
-      $(this).css("background-color", "red").html("<p>Start</p>");
+      $(thisButton).css("background-color", "red").html("<p>Start</p>");
     }
   }
 
@@ -55,6 +60,7 @@ $(document).ready(function() {
     var interval = setInterval(function() {
       lightUp(playList[i]);
       i++;
+      console.log(sequence);
 
       if(i>=playList.length){
         clearInterval(interval);
