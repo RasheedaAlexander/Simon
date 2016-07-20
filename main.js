@@ -1,21 +1,27 @@
 $(document).ready(function() {
   console.log("Let's Play Simon!");
-  var start = $('.start');
   //Keep track of the moves the computer makes
   var sequence = [];
   //Keep track of the moves the player makes
   var userClicks = [];
   //Keep track of how many rounds have been played
-  var round = $('.round');
+  var round = 0;
 
 
 
-  $(start).on("click", testNewStart);
+  $('.start').on("click", testNewStart);
   function newRound(){
     userClicks = [];
-    round=0;
-    console.log(this + "is start");
-
+    round++;
+    prompt("It doesn't wor")
+    if ($('.start').css("background-color") == "red") {
+      //reset the moves from the computer, the moves from the player, and the round to 0
+      //Change the start button to green when clicked
+      $('.start').css("background-color", "green").html("<p>Stop</p>");
+      console.log("Start");
+    } else {
+      $('.start').css("background-color", "red").html("<p>Start</p>");
+    }
     //when a new round starts is add 1 to the 'round' variable, which is keeping track of which round we are on
     //use .text() to set this round
     $('data-round').text(++this.round);
@@ -24,28 +30,17 @@ $(document).ready(function() {
 
     //Keep track of the most recent input made by the computer
     //.slice() extracts a section of sequence and returns a new array
+      //No need to slice because it eliminates
     userClicks = randomNumber();
+    sequence.push(userClicks);
     console.log("Pushing a random number into the array: " + sequence);
     testNewStart();
   }
 
   function testNewStart() {
-    do{
-    }
-    while();
-    sequence = [];
+    sequence = [1,2,3,4];
     sequence.push(randomNumber());
     processPlayList(sequence);
-
-    if ($(this).css(("background-color") == "rgb(255, 0, 0)")){
-      console.log("start button clicked");
-      //reset the moves from the computer, the moves from the player, and the round to 0
-      //Change the start button to green when clicked
-      $(this).css("background-color", "green").html("<p>Stop</p>");
-      console.log("Start");
-    } else {
-      $(this).css("background-color", "red").html("<p>Start</p>");
-    }
   }
 
   function processPlayList(playList) {
@@ -81,7 +76,6 @@ $(document).ready(function() {
   .off('click', '[data-tile]')
   .off('mousedown', '[data-tile]')
   .off('mouseup', '[data-tile]');
-
   $('[data-tile]').removeClass('hoverable');
 }
 }
