@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  // i think you're closer than you think you are. I think the first step is to add event listeners to your 4 buttons
+  // once you have that you can start to figure out the logic behind simon. I've read through you psuedocode and you're totally on the right t rack
+  // basically think of it this way:
+  // each time you click on one of the 4 buttons . It adds the type of button clicked to an array.
+  // additionally each time you click, you compare that array to the first elements of the computers arrays
   console.log("Let's Play Simon!");
   //Keep track of the moves the computer makes
   var sequence = [];
@@ -10,6 +15,7 @@ $(document).ready(function() {
 
 
   $('.start').on("click", testNewStart);
+  // Everything with what the computer needs to do is largely coded out.
   function newRound(){
     userClicks = [];
     round++;
@@ -44,6 +50,7 @@ $(document).ready(function() {
   }
 
   function processPlayList(playList) {
+    // might be a good idea to turn off the even listener for the start button once the game has started, or leverage a boolean that disables the start button. Like `gameRunning = true`
     var i=0;
     // lightUp(playList[i]);
     // window.setTimeout(lightUp(playList[i]), 2000);
@@ -59,6 +66,7 @@ $(document).ready(function() {
   }
 
   //light up tiles
+  // very cool!
   function lightUp(tile) {
     console.log("tile# passed into lightUp " + tile);
     console.log(tile);
