@@ -9,18 +9,19 @@
 <body>
   <div class="simon">
     <ul>
-      <li class="button red data-tile1" data-tile="1"></li>
-      <li class="button blue data-tile2" data-tile="2"></li>
-      <li  class="button yellow data-tile3" data-tile="3"></li>
-      <li class="button green data-tile4" data-tile="4"></li>
+      <li class="button" id="red" data-tile="1"></li>
+      <li class="button" id="blue" data-tile="2"></li>
+      <li  class="button" id="yellow" data-tile="3"></li>
+      <li class="button" id="green" data-tile="4"></li>
     </ul>
-  </div>
-  <div class="start">
-    <p>Start</p>
+
+    <div class="start">
+      <p>Start</p>
+    </div>
   </div>
 
-  <h2>Round: <span data-round="0" class="round"></span></h2>
-  <p data-action="lose">Sorry, you lost after <span data-round="0"></span> rounds!</p>
+  <!-- <h2>Round: <span data-round="0" class="round"></span></h2>
+  <p data-action="lose">Sorry, you lost after <span data-round="0"></span> rounds!</p> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="main.js"></script>
