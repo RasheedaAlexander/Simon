@@ -6,8 +6,10 @@ $(document).ready(function(){
   var yellow = $('#yellow');
   var green = $('#green');
 
-  var buttons1 = ["red", "yellow", "blue", "green"];
-  var buttons2 = [];
+  var buttons = [red, yellow, blue, green];
+  var changeOpacity;
+
+  var rand = buttons[Math.floor(Math.random()*buttons.length)];
 
   //When start button is clicked, start the game
   $('.start').on("click", startGame);
@@ -17,11 +19,31 @@ $(document).ready(function(){
     buttonBlink();
   }
 
-  //buttons will blink when start button is clicked
+  //Set timer for how long buttons will blink
   function buttonBlink() {
-    // loop through the buttons1 array
-    var rand = buttons1[Math.floor(Math.random()*buttons1.length)];
+    changeOpacity = setTimeout(function() {
+      changeColors();
+    }, 300);
+  }
+  //buttons will blink when start button is clicked
+  function changeColors() {
     console.log(rand);
+    $(rand).css("opacity", 0.5);
+    stopBlink();
+  }
+
+  // stop the button from blinking
+  function stopBlink(){
+    changeOpacity = setTimeout(function() {
+      changeColorsBackToNormal();
+    }, 500);
+    console.log("Hewwo");
+    // $(rand).css("opacity", 1);
+  }
+
+  function changeColorsBackToNormal() {
+    console.log(rand + "HELLO");
+    $(rand).css("opacity", 1);
   }
 })
 

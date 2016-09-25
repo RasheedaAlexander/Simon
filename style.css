@@ -23,6 +23,12 @@ ul {
 .button:hover {
   opacity: 0.7;
 }
+.faded {
+    opacity: 0.6;
+}
+.opaque {
+    opacity: 1;
+}
 #red {
   top: 0px;
   left: 40px;
@@ -46,9 +52,6 @@ ul {
   left: 40px;
   background-color: green;
   border-radius: 0 2% 0 100%;
-}
-.lit {
-  opacity: 0.7;
 }
 p {
   margin-top: 60px;
