@@ -57,6 +57,9 @@ p {
   margin-top: 60px;
   color: black;
 }
+#gameButton{
+  margin-top: 60px;
+}
 .start {
   position: absolute;
   background-color: red;
@@ -67,6 +70,9 @@ p {
   left: 31%;
   border-radius: 50%;
   text-align: center;
+}
+.greenStart{
+  background-color: green;
 }
 button {
   background-color: white;
